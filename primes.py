@@ -2,5 +2,17 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 def primes(number_of_primes):
+    if number_of_primes < 1:
+        raise ValueError('No arguments less than 1 are allowed.')
+    i=2
     list = []
+    while len(list) < number_of_primes:
+        isPrime = True
+        for j in range(2,i):
+            if i%j == 0:
+                isPrime = False
+                break
+        if isPrime:
+            list.append(i)
+        i+=1
     return list
